@@ -1,0 +1,13 @@
+#/etc/systemd/system/mq2.service
+[Unit]
+Description=MQ2 Sensor Metrics
+After=network.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+Restart=always
+ExecStart=/opt/mq2/start.sh
+
+[Install]
+WantedBy=multi-user.target
